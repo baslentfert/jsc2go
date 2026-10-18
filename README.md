@@ -104,3 +104,35 @@ jsc2go is a derivative work of JavaScriptCore and WTF and is distributed
 under the GNU Lesser General Public License, version 2.1 or later (see
 [LICENSE](LICENSE)). [NOTICE](NOTICE) names the original copyright
 holders and reproduces the BSD notices of the parts under that license.
+
+### Licensing in practice
+
+A plain summary, not legal advice; the license text is what counts.
+
+**You may:**
+- use jsc2go in any program, including commercial and closed-source ones;
+- study, modify and redistribute it;
+- run it on servers or internally without any obligation: the LGPL is
+  about distributing software, not about using it over a network.
+
+**When you distribute a program that contains jsc2go** (give or sell a
+binary to others), you must:
+1. include LICENSE and NOTICE (or point to them) and keep the copyright
+   notices;
+2. make the source code of the jsc2go you used available, including your
+   changes to jsc2go, which stay under the LGPL;
+3. let the recipient replace jsc2go with a modified version and rebuild
+   your program. Your own code can stay closed, but Go links everything
+   statically into one binary, so in practice this means providing your
+   program's source or object files so that it can be relinked against
+   another jsc2go.
+
+**You may not:**
+- distribute jsc2go, or a modified version of it, under a closed or more
+  restrictive license;
+- remove the copyright and license notices.
+
+jsc2go comes without any warranty. Why LGPL: jsc2go is translated from
+JavaScriptCore, whose parser and much of whose runtime are under the LGPL
+(version 2 or later); a translation is a derivative work, so it cannot be
+relicensed under a more permissive license such as MIT.
