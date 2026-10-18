@@ -1,0 +1,8 @@
+# Pull requests for newer versions of the GitHub Actions the CI uses, once
+# a month; the CI tests each one.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
