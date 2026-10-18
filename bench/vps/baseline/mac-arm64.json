@@ -1,0 +1,1946 @@
+[
+{
+"Engine": "jsc2go",
+"Bench": "Air",
+"Score": 70.3699,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "Basic",
+"Score": 50.4785,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "ML",
+"Score": 3.5115,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "Babylon",
+"Score": 57.82,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "cdjs",
+"Score": 10.7883,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "first-inspector-code-load",
+"Score": 124.9075,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "multi-inspector-code-load",
+"Score": 124.4593,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "Box2D",
+"Score": 38.4753,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "octane-code-load",
+"Score": 606.6069,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "crypto",
+"Score": 109.4249,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "delta-blue",
+"Score": 25.375,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "earley-boyer",
+"Score": 32.0294,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "gbemu",
+"Score": 15.4346,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "mandreel",
+"Score": 4.4247,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "navier-stokes",
+"Score": 187.6495,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "pdfjs",
+"Score": 25.2643,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "raytrace",
+"Score": 13.8972,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "regexp",
+"Score": 40.9901,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "richards",
+"Score": 19.3273,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "splay",
+"Score": 50.0637,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "typescript",
+"Score": 1.8034,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "FlightPlanner",
+"Score": 127.9398,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "OfflineAssembler",
+"Score": 12.8377,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "UniPoker",
+"Score": 33.5606,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "async-fs",
+"Score": 14.3239,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "hash-map",
+"Score": 14.1492,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "ai-astar",
+"Score": 40.2107,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "gaussian-blur",
+"Score": 73.2523,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "stanford-crypto-aes",
+"Score": 32.8903,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "stanford-crypto-pbkdf2",
+"Score": 70.3158,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "stanford-crypto-sha256",
+"Score": 66.4625,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "json-stringify-inspector",
+"Score": 92.1546,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "json-parse-inspector",
+"Score": 198.4913,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "3d-cube-SP",
+"Score": 57.9104,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "3d-raytrace-SP",
+"Score": 33.0672,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "base64-SP",
+"Score": 39.5492,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "crypto-aes-SP",
+"Score": 35.0247,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "crypto-md5-SP",
+"Score": 19.6381,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "crypto-sha1-SP",
+"Score": 17.4192,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "date-format-tofte-SP",
+"Score": 25.4694,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "date-format-xparb-SP",
+"Score": 29.4408,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "n-body-SP",
+"Score": 129.4747,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "regex-dna-SP",
+"Score": 71.9349,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "string-unpack-code-SP",
+"Score": 139.5876,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "tagcloud-SP",
+"Score": 61.7162,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "acorn-wtb",
+"Score": 3.6346,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "babylon-wtb",
+"Score": 3.9884,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "chai-wtb",
+"Score": 16.0981,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "coffeescript-wtb",
+"Score": 7.1865,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "espree-wtb",
+"Score": 3.2007,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "jshint-wtb",
+"Score": 9.6366,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "lebab-wtb",
+"Score": 7.0057,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "prepack-wtb",
+"Score": 7.648,
+"Err": ""
+},
+{
+"Engine": "jsc2go",
+"Bench": "uglify-js-wtb",
+"Score": 5.01,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "Air",
+"Score": 72.8797,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "Basic",
+"Score": 53.5409,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "ML",
+"Score": 3.214,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "Babylon",
+"Score": 62.3393,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "cdjs",
+"Score": 11.2669,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "first-inspector-code-load",
+"Score": 130.0043,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "multi-inspector-code-load",
+"Score": 131.2917,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "Box2D",
+"Score": 28.6631,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "octane-code-load",
+"Score": 643.3928,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "crypto",
+"Score": 33.846,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "delta-blue",
+"Score": 25.8683,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "earley-boyer",
+"Score": 33.3754,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "gbemu",
+"Score": 8.2662,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "mandreel",
+"Score": 1.9391,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "navier-stokes",
+"Score": 45.5123,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "pdfjs",
+"Score": 23.9474,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "raytrace",
+"Score": 14.5073,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "regexp",
+"Score": 41.3486,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "richards",
+"Score": 19.5809,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "splay",
+"Score": 49.2938,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "typescript",
+"Score": 1.8353,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "FlightPlanner",
+"Score": 130.0398,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "OfflineAssembler",
+"Score": 13.0632,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "UniPoker",
+"Score": 28.4659,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "async-fs",
+"Score": 8.2302,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "hash-map",
+"Score": 13.8876,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "ai-astar",
+"Score": 38.5717,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "gaussian-blur",
+"Score": 10.8004,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "stanford-crypto-aes",
+"Score": 24.1147,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "stanford-crypto-pbkdf2",
+"Score": 30.7135,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "stanford-crypto-sha256",
+"Score": 26.1677,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "json-stringify-inspector",
+"Score": 87.6302,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "json-parse-inspector",
+"Score": 196.4002,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "3d-cube-SP",
+"Score": 35.2811,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "3d-raytrace-SP",
+"Score": 32.0612,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "base64-SP",
+"Score": 39.75,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "crypto-aes-SP",
+"Score": 25.3757,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "crypto-md5-SP",
+"Score": 16.01,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "crypto-sha1-SP",
+"Score": 13.9341,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "date-format-tofte-SP",
+"Score": 26.5481,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "date-format-xparb-SP",
+"Score": 27.8939,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "n-body-SP",
+"Score": 30.2696,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "regex-dna-SP",
+"Score": 71.9705,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "string-unpack-code-SP",
+"Score": 144.441,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "tagcloud-SP",
+"Score": 61.7875,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "acorn-wtb",
+"Score": 3.7618,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "babylon-wtb",
+"Score": 4.0696,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "chai-wtb",
+"Score": 16.3135,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "coffeescript-wtb",
+"Score": 7.287,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "espree-wtb",
+"Score": 3.0131,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "jshint-wtb",
+"Score": 6.4804,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "lebab-wtb",
+"Score": 4.7273,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "prepack-wtb",
+"Score": 5.1967,
+"Err": ""
+},
+{
+"Engine": "jsc2go-nojit",
+"Bench": "uglify-js-wtb",
+"Score": 3.4133,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "Air",
+"Score": 42.8849,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "Basic",
+"Score": 0,
+"Err": "TypeError: cannot read property 'length' of undefined"
+},
+{
+"Engine": "quickjs",
+"Bench": "ML",
+"Score": 1.9974,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "Babylon",
+"Score": 35.5075,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "cdjs",
+"Score": 5.8389,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "first-inspector-code-load",
+"Score": 47.2154,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "multi-inspector-code-load",
+"Score": 47.006,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "Box2D",
+"Score": 16.0247,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "octane-code-load",
+"Score": 345.8818,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "crypto",
+"Score": 14.2132,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "delta-blue",
+"Score": 16.4499,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "earley-boyer",
+"Score": 18.0266,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "gbemu",
+"Score": 5.2137,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "mandreel",
+"Score": 1.0652,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "navier-stokes",
+"Score": 28.0447,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "pdfjs",
+"Score": 8.3228,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "raytrace",
+"Score": 12.053,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "regexp",
+"Score": 15.2294,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "richards",
+"Score": 11.3934,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "splay",
+"Score": 28.9949,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "typescript",
+"Score": 1.3329,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "FlightPlanner",
+"Score": 57.4996,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "OfflineAssembler",
+"Score": 0,
+"Err": "timeout"
+},
+{
+"Engine": "quickjs",
+"Bench": "UniPoker",
+"Score": 18.0905,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "async-fs",
+"Score": 0,
+"Err": "no result"
+},
+{
+"Engine": "quickjs",
+"Bench": "hash-map",
+"Score": 6.3575,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "ai-astar",
+"Score": 19.211,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "gaussian-blur",
+"Score": 3.68,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "stanford-crypto-aes",
+"Score": 16.3855,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "stanford-crypto-pbkdf2",
+"Score": 18.8298,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "stanford-crypto-sha256",
+"Score": 15.9732,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "json-stringify-inspector",
+"Score": 26.1438,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "json-parse-inspector",
+"Score": 41.065,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "3d-cube-SP",
+"Score": 0,
+"Err": "Error: bad vector sum for CubeSize = 20; expected 2889.0000000000045 but got 2889.0000000000086"
+},
+{
+"Engine": "quickjs",
+"Bench": "3d-raytrace-SP",
+"Score": 15.5311,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "base64-SP",
+"Score": 15.3741,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "crypto-aes-SP",
+"Score": 19.0248,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "crypto-md5-SP",
+"Score": 11.7948,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "crypto-sha1-SP",
+"Score": 9.6238,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "date-format-tofte-SP",
+"Score": 8.0025,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "date-format-xparb-SP",
+"Score": 3.6382,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "n-body-SP",
+"Score": 15.3675,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "regex-dna-SP",
+"Score": 29.9613,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "string-unpack-code-SP",
+"Score": 46.5851,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "tagcloud-SP",
+"Score": 27.7949,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "acorn-wtb",
+"Score": 1.8851,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "babylon-wtb",
+"Score": 3.1789,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "chai-wtb",
+"Score": 6.9606,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "coffeescript-wtb",
+"Score": 0.3221,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "espree-wtb",
+"Score": 1.4819,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "jshint-wtb",
+"Score": 6.1772,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "lebab-wtb",
+"Score": 4.2634,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "prepack-wtb",
+"Score": 5.235,
+"Err": ""
+},
+{
+"Engine": "quickjs",
+"Bench": "uglify-js-wtb",
+"Score": 3.5559,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "Air",
+"Score": 65.1753,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "Basic",
+"Score": 0,
+"Err": "TypeError: Cannot read property 'length' of undefined at lex (<eval>:457:21(77))"
+},
+{
+"Engine": "goja",
+"Bench": "ML",
+"Score": 2.3208,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "Babylon",
+"Score": 37.9572,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "cdjs",
+"Score": 6.831,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "first-inspector-code-load",
+"Score": 86.4799,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "multi-inspector-code-load",
+"Score": 87.0488,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "Box2D",
+"Score": 10.9325,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "octane-code-load",
+"Score": 326.3523,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "crypto",
+"Score": 12.1992,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "delta-blue",
+"Score": 20.4631,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "earley-boyer",
+"Score": 20.3199,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "gbemu",
+"Score": 4.2369,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "mandreel",
+"Score": 0.67,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "navier-stokes",
+"Score": 16.7479,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "pdfjs",
+"Score": 7.095,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "raytrace",
+"Score": 9.4937,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "regexp",
+"Score": 24.7765,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "richards",
+"Score": 12.593,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "splay",
+"Score": 27.5478,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "typescript",
+"Score": 1.3046,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "FlightPlanner",
+"Score": 93.0936,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "OfflineAssembler",
+"Score": 12.6429,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "UniPoker",
+"Score": 22.9652,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "async-fs",
+"Score": 0,
+"Err": "SyntaxError: SyntaxError: Async generators are not supported yet at 118:5"
+},
+{
+"Engine": "goja",
+"Bench": "hash-map",
+"Score": 8.65,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "ai-astar",
+"Score": 22.4585,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "gaussian-blur",
+"Score": 3.3813,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "stanford-crypto-aes",
+"Score": 9.6079,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "stanford-crypto-pbkdf2",
+"Score": 10.3344,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "stanford-crypto-sha256",
+"Score": 9.3971,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "json-stringify-inspector",
+"Score": 84.4619,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "json-parse-inspector",
+"Score": 110.522,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "3d-cube-SP",
+"Score": 0,
+"Err": "Error: bad vector sum for CubeSize = 20; expected 2889.0000000000045 but got 2889.0000000000086 at Init (<eval>:345:9(50"
+},
+{
+"Engine": "goja",
+"Bench": "3d-raytrace-SP",
+"Score": 11.9266,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "base64-SP",
+"Score": 6.7189,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "crypto-aes-SP",
+"Score": 13.7051,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "crypto-md5-SP",
+"Score": 6.5255,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "crypto-sha1-SP",
+"Score": 5.8833,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "date-format-tofte-SP",
+"Score": 18.6368,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "date-format-xparb-SP",
+"Score": 34.5269,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "n-body-SP",
+"Score": 7.5315,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "regex-dna-SP",
+"Score": 23.5521,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "string-unpack-code-SP",
+"Score": 157.7623,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "tagcloud-SP",
+"Score": 19.8671,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "acorn-wtb",
+"Score": 2.1869,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "babylon-wtb",
+"Score": 3.0903,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "chai-wtb",
+"Score": 8.7286,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "coffeescript-wtb",
+"Score": 0.9022,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "espree-wtb",
+"Score": 2.0434,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "jshint-wtb",
+"Score": 4.6269,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "lebab-wtb",
+"Score": 5.8468,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "prepack-wtb",
+"Score": 5.4828,
+"Err": ""
+},
+{
+"Engine": "goja",
+"Bench": "uglify-js-wtb",
+"Score": 5.3168,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "Air",
+"Score": 66.4131,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "Basic",
+"Score": 0,
+"Err": "TypeError: Cannot read property 'length' of undefined at lex (<eval>:457:21(77))"
+},
+{
+"Engine": "sobek",
+"Bench": "ML",
+"Score": 2.3181,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "Babylon",
+"Score": 38.3008,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "cdjs",
+"Score": 6.8486,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "first-inspector-code-load",
+"Score": 87.3469,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "multi-inspector-code-load",
+"Score": 86.9658,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "Box2D",
+"Score": 10.9094,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "octane-code-load",
+"Score": 304.5396,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "crypto",
+"Score": 12.1679,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "delta-blue",
+"Score": 20.5388,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "earley-boyer",
+"Score": 20.1546,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "gbemu",
+"Score": 4.2379,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "mandreel",
+"Score": 0.6746,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "navier-stokes",
+"Score": 16.9344,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "pdfjs",
+"Score": 7.0148,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "raytrace",
+"Score": 9.4187,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "regexp",
+"Score": 24.2037,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "richards",
+"Score": 12.6704,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "splay",
+"Score": 27.9802,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "typescript",
+"Score": 1.3,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "FlightPlanner",
+"Score": 93.0194,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "OfflineAssembler",
+"Score": 12.6596,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "UniPoker",
+"Score": 22.842,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "async-fs",
+"Score": 0,
+"Err": "SyntaxError: SyntaxError: Async generators are not supported yet at 118:5"
+},
+{
+"Engine": "sobek",
+"Bench": "hash-map",
+"Score": 8.5632,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "ai-astar",
+"Score": 22.6256,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "gaussian-blur",
+"Score": 3.2957,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "stanford-crypto-aes",
+"Score": 9.4343,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "stanford-crypto-pbkdf2",
+"Score": 10.3555,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "stanford-crypto-sha256",
+"Score": 9.4769,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "json-stringify-inspector",
+"Score": 84.1784,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "json-parse-inspector",
+"Score": 110.7096,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "3d-cube-SP",
+"Score": 0,
+"Err": "Error: bad vector sum for CubeSize = 20; expected 2889.0000000000045 but got 2889.0000000000086 at Init (<eval>:345:9(50"
+},
+{
+"Engine": "sobek",
+"Bench": "3d-raytrace-SP",
+"Score": 12.0558,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "base64-SP",
+"Score": 6.6108,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "crypto-aes-SP",
+"Score": 13.8725,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "crypto-md5-SP",
+"Score": 6.641,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "crypto-sha1-SP",
+"Score": 5.8466,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "date-format-tofte-SP",
+"Score": 18.4603,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "date-format-xparb-SP",
+"Score": 34.5004,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "n-body-SP",
+"Score": 7.479,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "regex-dna-SP",
+"Score": 23.5841,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "string-unpack-code-SP",
+"Score": 157.1648,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "tagcloud-SP",
+"Score": 19.9823,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "acorn-wtb",
+"Score": 2.1512,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "babylon-wtb",
+"Score": 3.0888,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "chai-wtb",
+"Score": 8.6443,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "coffeescript-wtb",
+"Score": 0.8819,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "espree-wtb",
+"Score": 2.0418,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "jshint-wtb",
+"Score": 4.7152,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "lebab-wtb",
+"Score": 5.8168,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "prepack-wtb",
+"Score": 5.4714,
+"Err": ""
+},
+{
+"Engine": "sobek",
+"Bench": "uglify-js-wtb",
+"Score": 5.34,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "Air",
+"Score": 59.7474,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "Basic",
+"Score": 0,
+"Err": "ramune: eval: TypeError: cannot read property 'length' of undefined"
+},
+{
+"Engine": "ramune",
+"Bench": "ML",
+"Score": 2.4199,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "Babylon",
+"Score": 46.4629,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "cdjs",
+"Score": 7.4755,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "first-inspector-code-load",
+"Score": 50.6087,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "multi-inspector-code-load",
+"Score": 50.9767,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "Box2D",
+"Score": 18.9674,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "octane-code-load",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: salt is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "crypto",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: setupEngine is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "delta-blue",
+"Score": 22.2736,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "earley-boyer",
+"Score": 0,
+"Err": "ramune: eval: SyntaxError: Octal escape sequences are not allowed in strict mode"
+},
+{
+"Engine": "ramune",
+"Bench": "gbemu",
+"Score": 0,
+"Err": "ramune: eval: TypeError: 'length' is read-only"
+},
+{
+"Engine": "ramune",
+"Bench": "mandreel",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: Mandreel_timeouts is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "navier-stokes",
+"Score": 24.3606,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "pdfjs",
+"Score": 12.1007,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "raytrace",
+"Score": 12.37,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "regexp",
+"Score": 11.343,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "richards",
+"Score": 15.7743,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "splay",
+"Score": 31.7929,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "typescript",
+"Score": 0,
+"Err": "ramune: eval: SyntaxError: invalid argument name in strict code"
+},
+{
+"Engine": "ramune",
+"Bench": "FlightPlanner",
+"Score": 61.4252,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "OfflineAssembler",
+"Score": 0,
+"Err": "timeout"
+},
+{
+"Engine": "ramune",
+"Bench": "UniPoker",
+"Score": 23.9044,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "async-fs",
+"Score": 6.046,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "hash-map",
+"Score": 9.3895,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "ai-astar",
+"Score": 26.8202,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "gaussian-blur",
+"Score": 4.0791,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "stanford-crypto-aes",
+"Score": 14.7634,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "stanford-crypto-pbkdf2",
+"Score": 21.3752,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "stanford-crypto-sha256",
+"Score": 19.8202,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "json-stringify-inspector",
+"Score": 36.8135,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "json-parse-inspector",
+"Score": 44.5178,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "3d-cube-SP",
+"Score": 0,
+"Err": "ramune: eval: TypeError: cannot set property 'V' of undefined"
+},
+{
+"Engine": "ramune",
+"Bench": "3d-raytrace-SP",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: h is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "base64-SP",
+"Score": 9.8603,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "crypto-aes-SP",
+"Score": 13.968,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "crypto-md5-SP",
+"Score": 14.7674,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "crypto-sha1-SP",
+"Score": 12.1913,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "date-format-tofte-SP",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: i is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "date-format-xparb-SP",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: i is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "n-body-SP",
+"Score": 16.9173,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "regex-dna-SP",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: i is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "string-unpack-code-SP",
+"Score": 54.1125,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "tagcloud-SP",
+"Score": 19.8758,
+"Err": ""
+},
+{
+"Engine": "ramune",
+"Bench": "acorn-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "babylon-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "chai-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "coffeescript-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "espree-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "jshint-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "lebab-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "prepack-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+},
+{
+"Engine": "ramune",
+"Bench": "uglify-js-wtb",
+"Score": 0,
+"Err": "ramune: eval: ReferenceError: __web_tooling_global_suites__ is not defined"
+}
+]

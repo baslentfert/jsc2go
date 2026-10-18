@@ -1,0 +1,66 @@
+# Every push and pull request: the tests, fuzzing and leak probes on Linux
+# and Windows, and test262 (with and without nearly everything compiled)
+# on Linux. Every week, and when started by hand: everything on Linux,
+# Windows and macOS (arm64).
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON((github.event_name == 'push' || github.event_name == 'pull_request') && '["ubuntu-latest","windows-latest"]' || '["ubuntu-latest","windows-latest","macos-latest"]') }}
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Build and vet
+        run: go build ./... && go vet ./...
+      - name: Unit tests
+        run: go test ./...
+      - name: JIT differential fuzzing (generated code against the interpreter)
+        run: JIT_FUZZ_N=8000 go test -count=1 -v -run TestJITDifferential ./vm | tail -3
+      - name: Regex prefilter fuzzing
+        run: YARR_FUZZ_N=20000 go test -count=1 -v -run TestPrefiltersDifferential ./yarr | tail -3
+      - name: Memory leak probes
+        run: sh bench/build-engines.sh && sh bench/vps/checks/leaks.sh "bench/bin/jsrun$(go env GOEXE)"
+
+  test262:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON((github.event_name == 'push' || github.event_name == 'pull_request') && '["ubuntu-latest"]' || '["ubuntu-latest","windows-latest","macos-latest"]') }}
+        jit: [default, everything]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Clone test262
+        run: sh scripts/setup.sh test262
+      - name: test262 (expect 85615 of 85664; only failures JSC expects too)
+        run: |
+          if [ "${{ matrix.jit }}" = everything ]; then export JSC2GO_JITTHRESHOLD=1; fi
+          sh scripts/check262.sh test262-results.txt
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test262-${{ matrix.os }}-${{ matrix.jit }}
+          path: test262-results.txt

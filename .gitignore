@@ -1,0 +1,12 @@
+# Reference sources and the test suite are separate clones.
+/webkit/
+/test262/
+
+# Build output
+*.exe
+*.prof
+/bench/bin/
+/bench/results*.json
+/test262-results.txt
+/bench/run-*.log
+/bench/only.txt

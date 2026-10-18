@@ -1,0 +1,71 @@
+package ident
+
+// Well-known identifiers, mirroring the parts of JSC's CommonIdentifiers
+// (vm.propertyNames) and BuiltinNames that the parser and compiler use.
+// In JSC they hang off the VM; interned identifiers make them global here.
+var (
+	Arguments       = FromString("arguments")
+	Eval            = FromString("eval")
+	Async           = FromString("async")
+	Await           = FromString("await")
+	Yield           = FromString("yield")
+	Let             = FromString("let")
+	Static          = FromString("static")
+	Of              = FromString("of")
+	From            = FromString("from")
+	As              = FromString("as")
+	Target          = FromString("target")
+	Meta            = FromString("meta")
+	Get             = FromString("get")
+	Set             = FromString("set")
+	Constructor     = FromString("constructor")
+	Prototype       = FromString("prototype")
+	Length          = FromString("length")
+	Construct       = FromString("construct")
+	Reflect         = FromString("Reflect")
+	HasOwnProperty  = FromString("hasOwnProperty")
+	Call            = FromString("call")
+	Apply           = FromString("apply")
+	Default         = FromString("default")
+	Using           = FromString("using")
+	Defer           = FromString("defer")
+	Undefined       = FromString("undefined")
+	Function        = FromString("Function")
+	UnderscoreProto = FromString("__proto__")
+	UseStrict       = FromString("use strict")
+
+	// ConstructorPrivateField is "#constructor", which may not be declared.
+	ConstructorPrivateField = FromString("#constructor")
+
+	// Private symbols used by the parser and bytecode generator.
+	StarDefaultPrivateName              = PrivateSymbol("*default*")
+	StarNamespacePrivateName            = PrivateSymbol("*namespace*")
+	MetaPrivateName                     = PrivateSymbol("meta")
+	GeneratorPrivateName                = PrivateSymbol("generator")
+	GeneratorStatePrivateName           = PrivateSymbol("generatorState")
+	GeneratorValuePrivateName           = PrivateSymbol("generatorValue")
+	GeneratorResumeModePrivateName      = PrivateSymbol("generatorResumeMode")
+	GeneratorFramePrivateName           = PrivateSymbol("generatorFrame")
+	PrivateBrandPrivateName             = PrivateSymbol("privateBrand")
+	PrivateClassBrandPrivateName        = PrivateSymbol("privateClassBrand")
+	StaticInitializerBlockPrivateName   = PrivateSymbol("staticInitializerBlock")
+	UndefinedPrivateName                = PrivateSymbol("undefined")
+	CallPrivateName                     = PrivateSymbol("call")
+	ApplyPrivateName                    = PrivateSymbol("apply")
+	ThisPrivateName                     = PrivateSymbol("this")
+	NewTargetLocalPrivateName           = PrivateSymbol("newTargetLocal")
+	DerivedConstructorPrivateName       = PrivateSymbol("derivedConstructor")
+	InstanceFieldInitializerPrivateName = PrivateSymbol("instanceFieldInitializer")
+	HomeObjectPrivateName               = PrivateSymbol("homeObject")
+	GetPrivateName                      = PrivateSymbol("get")
+	SetPrivateName                      = PrivateSymbol("set")
+)
+
+// Well-known symbols used by the bytecode generator.
+var (
+	IteratorSymbol      = WellKnownSymbol("Symbol.iterator")
+	AsyncIteratorSymbol = WellKnownSymbol("Symbol.asyncIterator")
+	HasInstanceSymbol   = WellKnownSymbol("Symbol.hasInstance")
+	DisposeSymbol       = WellKnownSymbol("Symbol.dispose")
+	AsyncDisposeSymbol  = WellKnownSymbol("Symbol.asyncDispose")
+)
