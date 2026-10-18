@@ -132,6 +132,15 @@ binary to others), you must:
   restrictive license;
 - remove the copyright and license notices.
 
+**Your program can keep its own license**, MIT or closed: the LGPL
+covers jsc2go, not the code that uses it. Bun is the same arrangement one
+level down: it is MIT-licensed and statically links JavaScriptCore, which
+stays LGPL; Bun publishes its JavaScriptCore source and explains how to
+rebuild Bun with a modified one (see Bun's
+[LICENSE.md](https://github.com/oven-sh/bun/blob/main/LICENSE.md)).
+jsc2go is in JavaScriptCore's place there, your program in Bun's. For an
+open-source program the source requirements are met by publishing it.
+
 jsc2go comes without any warranty. Why LGPL: jsc2go is translated from
 JavaScriptCore, whose parser and much of whose runtime are under the LGPL
 (version 2 or later); a translation is a derivative work, so it cannot be
