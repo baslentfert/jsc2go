@@ -23,8 +23,8 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
       - name: Build and vet
@@ -49,8 +49,8 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
       - name: Clone test262
@@ -59,7 +59,7 @@ jobs:
         run: |
           if [ "${{ matrix.jit }}" = everything ]; then export JSC2GO_JITTHRESHOLD=1; fi
           sh scripts/check262.sh test262-results.txt
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: test262-${{ matrix.os }}-${{ matrix.jit }}
