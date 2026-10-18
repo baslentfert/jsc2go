@@ -29,7 +29,7 @@ import (
 )
 
 // Version is jsc2go's version.
-const Version = "0.1.0-dev"
+const Version = "0.1.0"
 
 // Runtime is a JavaScript engine instance: a global object, its built-ins
 // and everything scripts create.
