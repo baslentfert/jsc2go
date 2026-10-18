@@ -51,6 +51,44 @@ Environment variables for the JIT:
 | `JSC2GO_OPT=0` | no optimizing tier |
 | `JSC2GO_OPTHOT=n` | loop iterations before a loop gets an optimized version (default 5000) |
 
+## Embedding
+
+The root package runs JavaScript inside a Go program, with an API close to
+goja's:
+
+```go
+import "github.com/baslentfert/jsc2go"
+
+rt := jsc2go.New()
+rt.Set("add", func(a, b float64) float64 { return a + b })
+v, err := rt.RunString(`add(1, 2) * 10`)
+fmt.Println(v.Export(), err) // 30 <nil>
+```
+
+- Go values, functions and structs go in with `Set` and `ToValue`; results
+  come back with `Export` and `ExportTo`. Structs are copied into plain
+  objects with one shape per type, so the JIT keeps caching their
+  properties. A Go `error` result throws; an uncaught exception comes
+  back as `*Exception`.
+- `RunContext` and `Interrupt` stop a script from another goroutine,
+  including endless loops, deep recursion and regular expressions; the
+  runtime can be used again afterwards.
+- An event loop (`RunLoop`) with `setTimeout`, `setInterval`,
+  `queueMicrotask` and promises; `Post`, `Do` and `Invoke` hand work to
+  it from other goroutines.
+- ES modules: `RegisterModule` exposes Go functions as an importable
+  module (as Bun's and Node's built-ins), `SetModuleLoader` and
+  `FileLoader` load the rest.
+
+The package documentation and `example_test.go` show each part;
+[EMBEDDING.md](EMBEDDING.md) explains the choices.
+[examples/dashboard](examples/dashboard/README.md) is a
+[Wails](https://wails.io) desktop app whose logic is a JavaScript file
+importing the system (CPU, memory, disks, processes, SQLite, commands)
+as Go modules; it reloads that file when it changes, without a rebuild.
+
+A Runtime belongs to one goroutine at a time, as in goja.
+
 ## Tests
 
     go test ./...
@@ -95,6 +133,8 @@ the separate `bench/engines` module; only that downloads them. Then pass
 | `yarr/` | regular expressions |
 | `ident/` | identifiers and the atom table |
 | `wtf/dtoa/` | number to string conversion (double-conversion) |
+| the root | the embedding API (`Runtime`, `Value`, the event loop, modules) |
+| `examples/` | programs that embed jsc2go, each with its own `go.mod` |
 | `cmd/` | `jsrun` (run JavaScript), `jscbc` and `jscparse` (bytecode, syntax tree), `test262` and its helpers |
 | `bench/` | the JetStream2 runner, the other engines (`bench/engines`), checks for other machines (`bench/vps`) |
 
