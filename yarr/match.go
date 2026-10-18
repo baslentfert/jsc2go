@@ -27,6 +27,10 @@ type matcher[T byte | uint16] struct {
 	unicode bool
 	caps    []int
 	steps   int
+	// check is the step count at which the next check runs (stepCheck):
+	// matchLimit, and every checkEvery steps whether stop is set.
+	check int
+	stop  *atomic.Bool
 	// end is where the match that done accepted ends; done is made once
 	// per matcher, which Exec reuses (Pattern.spare8, spare16).
 	end  int
@@ -78,25 +82,60 @@ func putMatcher[T byte | uint16](p *Pattern, m *matcher[T]) {
 
 type hitLimit struct{}
 
+type interrupted struct{}
+
+// ErrInterrupted is returned when the stop flag ExecStop was given is set
+// while it matches.
+var ErrInterrupted = errors.New("regular expression interrupted")
+
+// checkEvery is how many backtracking steps a match takes between looks at
+// its stop flag.
+const checkEvery = 1 << 16
+
+// stepCheck runs when steps reaches check: past matchLimit the match
+// fails (JSC's ErrorHitLimit), a set stop flag interrupts it, and the next
+// check is set. (Callers compare steps with check only, as they compared
+// it with matchLimit before.)
+func (m *matcher[T]) stepCheck() {
+	if m.steps > matchLimit {
+		panic(hitLimit{})
+	}
+	if m.stop != nil && m.stop.Load() {
+		panic(interrupted{})
+	}
+	m.check = min(m.steps+checkEvery, matchLimit+1)
+}
+
 // Exec matches p against input starting at code unit start (the lastIndex),
 // trying successive start positions unless the pattern is sticky. It returns
 // the capture offsets (pairs of begin/end, -1 for unset), or nil if there is
 // no match.
 func Exec[T byte | uint16](p *Pattern, input []T, start int) (caps []int, err error) {
+	return ExecStop(p, input, start, nil)
+}
+
+// ExecStop is Exec that returns ErrInterrupted when stop is set while it
+// backtracks (a JavaScript engine's interrupt; nil: never).
+func ExecStop[T byte | uint16](p *Pattern, input []T, start int, stop *atomic.Bool) (caps []int, err error) {
 	if p.sets != nil && prefiltersEnabled {
-		return execSets(p, input, start), nil
+		return execSets(p, input, start), nil // (linear in the input)
 	}
 	m := takeMatcher[T](p)
 	m.in, m.unicode, m.steps, m.end = input, p.eitherUnicode(), 0, -1
+	m.stop, m.check = stop, min(checkEvery, matchLimit+1)
 	m.caps = make([]int, 2*(p.NumSubpatterns+1))
 	defer func() {
 		r := recover()
 		putMatcher(p, m)
 		if r != nil {
-			if _, ok := r.(hitLimit); !ok {
+			switch r.(type) {
+			case hitLimit:
+				caps, err = nil, ErrHitLimit
+			case interrupted:
+				caps, err = nil, ErrInterrupted
+			default:
 				panic(r)
 			}
-			caps, err = nil, ErrHitLimit
 		}
 	}()
 	anchored := p.sticky() || p.startsWithBOLOnly()
@@ -182,8 +221,8 @@ func (m *matcher[T]) disjunction(d *patternDisjunction, pos int, k cont) bool {
 }
 
 func (m *matcher[T]) terms(ts []patternTerm, pos int, k cont) bool {
-	if m.steps++; m.steps > matchLimit {
-		panic(hitLimit{})
+	if m.steps++; m.steps >= m.check {
+		m.stepCheck()
 	}
 	for i := range ts {
 		t := &ts[i]

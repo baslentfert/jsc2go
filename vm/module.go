@@ -833,7 +833,7 @@ func (vm *VM) continueDynamicImport(realm *Realm, referrer string, req parser.Mo
 // evaluation promise; run jobs to settle it.
 func (vm *VM) RunModule(source, name string) (promise *Object, err error) {
 	r := vm.realm
-	exc := vm.Try(func() {
+	exc := vm.guard(func() {
 		m := vm.parseModule(r, source, name, "")
 		if r.modules == nil {
 			r.modules = make(map[moduleKey]*moduleRecord)

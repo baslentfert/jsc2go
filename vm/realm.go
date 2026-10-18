@@ -469,9 +469,11 @@ func (vm *VM) CompileScript(source, name string) (*Script, error) {
 }
 
 // RunScript runs a compiled script in the current realm (ScriptEvaluation).
+// It returns the exception the script throws as *Exception, or
+// ErrInterrupted.
 func (vm *VM) RunScript(s *Script) (result Value, err error) {
-	if exc := vm.Try(func() { result = vm.runScript(vm.realm, s) }); exc != nil {
-		return Undefined, exc
+	if err := vm.guard(func() { result = vm.runScript(vm.realm, s) }); err != nil {
+		return Undefined, err
 	}
 	return result, nil
 }

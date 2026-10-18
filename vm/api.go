@@ -44,3 +44,19 @@ func (r *Realm) NewHTMLDDA() *Object {
 	o.htmlDDA = true
 	return o
 }
+
+// NewFunction makes a native function object named name with the given
+// length (its declared parameter count).
+func (r *Realm) NewFunction(name string, length int, fn NativeFunc) *Object {
+	return r.newNativeFunction(name, length, fn)
+}
+
+// RunTask runs f as a host task (an event loop's timer callback or posted
+// work), then the promise jobs it queued. It returns the exception f or a
+// job throws (*Exception), or ErrInterrupted; the VM stays usable.
+func (vm *VM) RunTask(f func()) error {
+	if err := vm.guard(f); err != nil {
+		return err
+	}
+	return vm.RunJobs()
+}

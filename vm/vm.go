@@ -3,6 +3,7 @@ package vm
 import (
 	"errors"
 	"fmt"
+	"reflect"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -77,6 +78,11 @@ type VM struct {
 	joinStack []*Object
 
 	interrupted atomic.Bool
+	// callLimit is the call depth generated code compares with: MaxDepth,
+	// or -1 while interrupted, so that every call of generated code takes
+	// the slow path, whose enterCall stops (recursion without loops),
+	// with no instruction of its own.
+	callLimit atomic.Int64
 
 	pendingTailCall *tailCallRequest
 
@@ -158,12 +164,19 @@ type HostHooks struct {
 	LoadModule func(specifier, referrer string) (source, name string, err error)
 	// PromiseRejectionTracker is HostPromiseRejectionTracker.
 	PromiseRejectionTracker func(promise *Object, operation string)
+	// ToJS, if set, converts Go values of the embedder's own types before
+	// Realm.ToValue does (ok false: ToValue converts it).
+	ToJS func(r *Realm, x reflect.Value) (v Value, ok bool)
+	// FromJS, if set, converts to the embedder's own Go types before
+	// ExportTo does (ok false: ExportTo converts it).
+	FromJS func(v Value, t reflect.Type) (x reflect.Value, ok bool)
 }
 
 // New creates a VM with one realm.
 func New() *VM {
 	vm := &VM{protoEpoch: 1, MaxDepth: 2500, symbolRegistry: make(map[string]weak.Pointer[Symbol]), CanBlock: true, taskSignal: make(chan struct{}, 1), rootShape: newRootShape(&shapeTree{}), weakQueue: &weakQueue{}}
 	vm.realm = vm.NewRealm()
+	vm.setCallLimit()
 	return vm
 }
 
@@ -325,8 +338,19 @@ func (vm *VM) Try(f func()) (exc *Exception) {
 func (vm *VM) EnqueueJob(job func()) { vm.jobs = append(vm.jobs, job) }
 
 // RunJobs runs queued jobs and timers until none are left. It returns the
-// first exception a job throws (and stops).
-func (vm *VM) RunJobs() *Exception {
+// first exception a job throws (and stops), or ErrInterrupted.
+func (vm *VM) RunJobs() error {
+	var exc *Exception
+	if err := vm.guard(func() { exc = vm.runJobs() }); err != nil {
+		return err
+	}
+	if exc != nil {
+		return exc
+	}
+	return nil
+}
+
+func (vm *VM) runJobs() *Exception {
 	for {
 		vm.clearKeptObjects() // after the script or the task that ran last
 		if exc := vm.runMicrotasks(); exc != nil {
@@ -359,13 +383,63 @@ func (vm *VM) runMicrotasks() *Exception {
 
 var privateSymbolsMu sync.Mutex
 
-// ErrInterrupted is the panic value that unwinds a script stopped by
-// Interrupt. JavaScript code cannot catch it.
+// ErrInterrupted is the error RunScript, Eval, RunModule and RunJobs
+// return when Interrupt stopped the code they ran (inside, it is the panic
+// value that unwinds it; JavaScript code cannot catch it).
 var ErrInterrupted = errors.New("vm: execution interrupted")
 
-// Interrupt asks the running script to stop at the next loop iteration or
-// function entry. It may be called from another goroutine.
-func (vm *VM) Interrupt() { vm.interrupted.Store(true) }
+// Interrupt asks the running code to stop at the next loop iteration or
+// function call; if none runs, the next code run stops at once. It may be
+// called from another goroutine. The VM stays interrupted until
+// ClearInterrupt.
+func (vm *VM) Interrupt() {
+	vm.interrupted.Store(true)
+	vm.callLimit.Store(-1)
+}
+
+// ClearInterrupt lets code run again after Interrupt.
+func (vm *VM) ClearInterrupt() {
+	vm.interrupted.Store(false)
+	vm.setCallLimit()
+}
+
+// setCallLimit sets callLimit from MaxDepth (which the embedder may
+// change between runs), unless interrupted. (Interrupt stores the flag
+// before the limit, and this reads it after storing: whichever runs last,
+// an interrupt leaves -1.)
+func (vm *VM) setCallLimit() {
+	vm.callLimit.Store(int64(vm.MaxDepth))
+	if vm.interrupted.Load() {
+		vm.callLimit.Store(-1)
+	}
+}
+
+// guard runs f and returns the JavaScript exception it throws, or
+// ErrInterrupted if Interrupt stopped it. Either way the VM can be used
+// again; an interrupt also drops the queued jobs and timers, which
+// belonged to the code it stopped.
+func (vm *VM) guard(f func()) (err error) {
+	vm.setCallLimit()
+	depth, frame, realm := vm.depth, vm.currentFrame, vm.realm
+	mark := vm.jitMark()
+	defer func() {
+		if r := recover(); r != nil {
+			if r != ErrInterrupted {
+				panic(r)
+			}
+			vm.jitUnwindTo(mark)
+			vm.depth, vm.currentFrame, vm.realm = depth, frame, realm
+			clear(vm.jobs)
+			vm.jobs = vm.jobs[:0]
+			vm.timers = nil
+			err = ErrInterrupted
+		}
+	}()
+	if exc := vm.Try(f); exc != nil {
+		return exc
+	}
+	return nil
+}
 
 // --- Timers ------------------------------------------------------------------------------
 

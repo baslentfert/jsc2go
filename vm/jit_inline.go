@@ -696,7 +696,7 @@ func (c *jitCompiler) inlineActivationCheck(fail *jit.Label) {
 	m := &c.m
 	m.Load64(jit.S4, jit.S3, offVMDepth)
 	m.AddImm64(jit.S4, jit.S4, uint32(inlineMaxDepth-1))
-	m.Load64(jit.S9, jit.S3, offVMMaxDepth)
+	m.Load64(jit.S9, jit.S3, offVMCallLimit)
 	m.Branch64(jit.SGE, jit.S4, jit.S9, fail)
 	m.Load64(jit.S4, jit.S3, offVMJitDepth)
 	m.Branch64Imm(jit.UGE, jit.S4, uint32(jitMaxDepth-inlineMaxDepth+1), fail)

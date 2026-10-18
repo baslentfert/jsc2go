@@ -6,7 +6,9 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+	"sync/atomic"
 	"testing"
+	"time"
 	"unicode/utf16"
 )
 
@@ -144,5 +146,29 @@ func BenchmarkMatchers(b *testing.B) {
 				}
 			})
 		}
+	}
+}
+
+// TestExecStop interrupts a match that backtracks exponentially: with the
+// stop flag set, ExecStop returns ErrInterrupted within checkEvery steps.
+func TestExecStop(t *testing.T) {
+	p, perr := CompilePattern(utf16.Encode([]rune(`^(a+)+$`)), 0)
+	if perr != NoError {
+		t.Fatal(perr)
+	}
+	in := []byte(strings.Repeat("a", 40) + "b")
+	var stop atomic.Bool
+	time.AfterFunc(50*time.Millisecond, func() { stop.Store(true) })
+	start := time.Now()
+	if _, err := ExecStop(p, in, 0, &stop); err != ErrInterrupted {
+		t.Fatalf("got %v, want ErrInterrupted", err)
+	}
+	if d := time.Since(start); d > 2*time.Second {
+		t.Fatalf("stopped after %v", d)
+	}
+	// A pattern that matches quickly is not disturbed by an unset flag.
+	stop.Store(false)
+	if caps, err := ExecStop(p, []byte("aaa"), 0, &stop); err != nil || caps == nil {
+		t.Fatalf("got %v, %v", caps, err)
 	}
 }

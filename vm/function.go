@@ -366,6 +366,9 @@ func (b *boundFunction) construct(f *Object, args []Value, newTarget *Object) Va
 // --- Call and Construct --------------------------------------------------------------
 
 func (vm *VM) enterCall() {
+	if vm.interrupted.Load() {
+		panic(ErrInterrupted) // (recursion without loops)
+	}
 	vm.depth++
 	if vm.depth > vm.MaxDepth {
 		vm.depth -= 10 // leave room to construct the error

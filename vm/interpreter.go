@@ -239,6 +239,9 @@ type tailCallRequest struct {
 // caller first (runFunction then runs the callee), others are ordinary
 // calls.
 func (vm *VM) tailCall(callee Value, this Value, args []Value) Value {
+	if vm.interrupted.Load() {
+		panic(ErrInterrupted) // (proper tail calls reuse the frame: no enterCall)
+	}
 	if o := callee.AsObject(); o != nil {
 		if j, ok := o.fn.(*jsFunction); ok && !j.exec.IsClassConstructorFunction() {
 			vm.pendingTailCall = &tailCallRequest{o, this, copyArgs(args)} // the caller's registers are released first

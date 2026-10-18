@@ -147,8 +147,9 @@ var (
 	offFramePC         = int(unsafe.Offsetof(Frame{}.pc))
 	offFrameInlineRoom = int(unsafe.Offsetof(Frame{}.inlineRoom))
 
-	offVMDepth     = int(unsafe.Offsetof(VM{}.depth))
-	offVMMaxDepth  = int(unsafe.Offsetof(VM{}.MaxDepth))
+	offVMDepth = int(unsafe.Offsetof(VM{}.depth))
+	// (atomic.Int64 is an int64.)
+	offVMCallLimit = int(unsafe.Offsetof(VM{}.callLimit))
 	offVMRegStack  = int(unsafe.Offsetof(VM{}.regStack))
 	offVMSp        = int(unsafe.Offsetof(VM{}.sp))
 	offVMSpDirty   = int(unsafe.Offsetof(VM{}.spDirty))
@@ -353,7 +354,9 @@ func (c *jitCompiler) directCall(pc int, this bytecode.VirtualRegister, argc uin
 	// S3 = vm: room in the call depth, the chain and the register stack.
 	m.Load64(jit.S3, rFrame, offFrameVM)
 	m.Load64(jit.S4, jit.S3, offVMDepth)
-	m.Load64(jit.S9, jit.S3, offVMMaxDepth)
+	// (callLimit: MaxDepth, or -1 after Interrupt, when the slow path's
+	// call stops: also recursion without loops.)
+	m.Load64(jit.S9, jit.S3, offVMCallLimit)
 	m.Branch64(jit.SGE, jit.S4, jit.S9, slow)
 	m.Load64(jit.S4, jit.S3, offVMJitDepth)
 	m.Branch64Imm(jit.UGE, jit.S4, jitMaxDepth, slow)

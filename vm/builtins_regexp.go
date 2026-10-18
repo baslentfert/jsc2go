@@ -264,9 +264,12 @@ func (vm *VM) match(d *regExpData, s *String, lastIndex int) []int {
 	var caps []int
 	var err error
 	if u16 == nil {
-		caps, err = yarr.Exec(d.pattern, latin1, lastIndex)
+		caps, err = yarr.ExecStop(d.pattern, latin1, lastIndex, &vm.interrupted)
 	} else {
-		caps, err = yarr.Exec(d.pattern, u16, lastIndex)
+		caps, err = yarr.ExecStop(d.pattern, u16, lastIndex, &vm.interrupted)
+	}
+	if err == yarr.ErrInterrupted {
+		panic(ErrInterrupted)
 	}
 	if err != nil {
 		vm.throwRangeError("%s", err.Error())

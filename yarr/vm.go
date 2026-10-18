@@ -426,8 +426,8 @@ func (m *matcher[T]) vmExec(prog *vmProgram, pc int32, pos int) (int, bool) {
 
 		// Backtrack: undo records are applied until a resumption point.
 		for {
-			if m.steps++; m.steps > matchLimit {
-				panic(hitLimit{})
+			if m.steps++; m.steps >= m.check {
+				m.stepCheck()
 			}
 			if len(m.stack) <= base {
 				return pos, false
