@@ -21,4 +21,10 @@ go run ./cmd/test262 -v \
 	> "$out" 2>&1 || true
 tail -1 "$out"
 echo "Failures JSC does not expect:"
-awk -f scripts/summarize.awk "$out" | cut -f1 | tr '\134' '/' | sed 's| (strict)$||; s|^test262/||' | sort -u | comm -23 - scripts/jsc_expected.txt
+# (Byte order and no CRs on both sides: comm needs both lists sorted the
+# same way, and on the CI's Windows and macOS runners a CRLF checkout or
+# the locale's sort order made it match nothing, or only some.)
+tr -d '\r' <scripts/jsc_expected.txt >"$out.expected"
+awk -f scripts/summarize.awk "$out" | cut -f1 | tr -d '\r' | tr '\134' '/' | sed 's| (strict)$||; s|^test262/||' |
+	LC_ALL=C sort -u | LC_ALL=C comm -23 - "$out.expected"
+rm -f "$out.expected"
