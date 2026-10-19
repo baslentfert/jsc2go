@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"runtime"
 	"runtime/debug"
 	"strconv"
 	"strings"
@@ -2206,9 +2207,11 @@ func TestJITClosureVars(t *testing.T) {
 
 // noGC turns the GC off until the function it returns runs: generated
 // code does not run while the GC's write barrier is on, so that a test
-// that counts what its code did fails at random under load otherwise.
+// that counts what its code did fails at random otherwise. (Then one
+// collection: SetGCPercent does not stop a cycle already marking.)
 func noGC() func() {
 	old := debug.SetGCPercent(-1)
+	runtime.GC()
 	return func() { debug.SetGCPercent(old) }
 }
 
@@ -2877,6 +2880,7 @@ func TestJITOptTierUp(t *testing.T) {
 	saved, savedOpt, savedHot := jitThreshold, jitOpt, optHotIterations
 	jitThreshold, jitOpt, optHotIterations = 20, true, 100
 	defer func() { jitThreshold, jitOpt, optHotIterations = saved, savedOpt, savedHot }()
+	defer noGC()()
 	before := optCompiled.Load()
 	compareJIT(t, src)
 	if optCompiled.Load() == before {
@@ -2902,6 +2906,7 @@ func TestJITOptEntryFails(t *testing.T) {
 	saved, savedOpt, savedHot := jitThreshold, jitOpt, optHotIterations
 	jitThreshold, jitOpt, optHotIterations = 20, true, 100
 	defer func() { jitThreshold, jitOpt, optHotIterations = saved, savedOpt, savedHot }()
+	defer noGC()()
 	before := optDisabled.Load()
 	compareJIT(t, src)
 	if optDisabled.Load() == before {
@@ -3004,6 +3009,7 @@ func TestJITOptTierUpCalled(t *testing.T) {
 	saved, savedOpt, savedHot := jitThreshold, jitOpt, optHotIterations
 	jitThreshold, jitOpt, optHotIterations = 20, true, 500
 	defer func() { jitThreshold, jitOpt, optHotIterations = saved, savedOpt, savedHot }()
+	defer noGC()()
 	before := optCompiled.Load()
 	compareJIT(t, src)
 	if optCompiled.Load() == before {
